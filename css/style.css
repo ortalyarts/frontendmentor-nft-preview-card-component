@@ -1,0 +1,172 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+    font-size:90%;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* General STYLE */
+:root {
+    --accent: hsl(178, 100%, 50%);
+    --bg: hsl(217, 54%, 11%);
+    --bg2: hsl(216, 50%, 16%);
+    --maincolor: hsl(215, 51%, 70%);
+    --sansserif: 'Outfit', sans-serif;
+    --weightnormal: 300;
+    --weightsemi: 600;
+    --weightlight: 300;
+}
+a {
+  -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+body {
+    padding:0em;
+    font-family: var(--sansserif);
+    text-rendering: optimizeSpeed;
+    text-align:left; 
+    background:var(--bg);
+    /* to stick the footer to the bottom */
+    min-height: 100vh; 
+    display:flex; flex-direction:column; 
+}
+main {
+  background: var(--bg2);
+  border-radius: 1.2rem;
+  box-shadow: 0 0 2rem 1rem #041123;
+  overflow:hidden;
+  max-width: 21.875rem;
+  padding:1.5rem;
+  margin:auto;
+}
+h1, h2, h3, ul, p {
+    padding:0;
+    text-align:left;
+}
+h1, h1 a {
+    font-size:1.2rem;
+    line-height:1.5rem;
+    letter-spacing: 0.03rem;
+    font-weight: var(--weightsemi);
+    color:white;
+    margin:1.2rem 0;
+    text-decoration: none;
+}
+h1 a:hover {
+  color: var(--accent);
+}
+h2 {
+  font-size:0.9rem;
+  line-height:0.9rem;
+  letter-spacing:0.025rem;
+  font-weight:var(--weightsemi);
+  color:var(--accent);
+}
+p {
+    font-size:1.125rem;
+    line-height:1.6rem;
+    font-weight: var(--weightlight);
+    color:var(--maincolor);
+    padding:0;
+}
+img.productphoto {
+  width:100%;
+  height:auto;
+}
+.hovereffect {
+  position: relative;
+  width:100%;
+  background: var(--accent);
+  border-radius: 0.7rem;
+  overflow:hidden;
+}
+.hovereffect img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  vertical-align: top; /*removes white space below the picture */
+}
+.hovereffect:hover img {
+	opacity: .5;
+}
+.icon-view {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.icon-view img {
+  width: 3rem;
+}
+.hovereffect:hover .icon-view {
+	opacity: 1;
+}
+.details {
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:1rem;
+  margin:1.2rem 0;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+  padding-bottom:1.2rem;
+}
+p.time, h2, .autor {
+  display: inline-flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+}
+p.time {
+  font-size:0.9rem;
+  line-height:0.9rem;
+}
+p.time::before {
+  content: url(../images/icon-clock.svg);
+  display:inline-block;
+}
+.details h2::before {
+  content: url(../images/icon-ethereum.svg);
+  display:inline-block;
+}
+.autor {
+  gap: 1.2rem;
+}
+.autor p {
+  font-size:1rem;
+}
+.autor p a {
+  color:white;
+  text-decoration: none;
+}
+.autor p a:hover {
+  color: var(--accent);
+}
+.autor img {
+  width:2.125rem;
+  border: 1px solid white;
+  border-radius: 2rem;
+}
+footer { color: var(--maincolor); font-size: 0.8rem; text-align: center; }
+footer a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:40rem){
+  html{
+    font-size:100%;
+  }
+}
